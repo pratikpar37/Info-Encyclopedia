@@ -1,9 +1,11 @@
 import React from "react";
-import Home from "./Home";
-import Users from "./Users";
-import About from "./About";
-import Contacts from "./Contacts";
-import Logout from "./Logout";
+// import Home from "./Home";
+// import PostList from "./PostList";
+// import About from "./About";
+// import ToDoList from "./ToDoList";
+// import Logout from "./Logout";
+// import PostDetail from "./PostDetail";
+import { Routes } from "./Routes";
 
 import {
   BrowserRouter as Router,
@@ -32,11 +34,11 @@ class App extends React.Component {
             <Link to="/About" class="item" >
               About
             </Link>
-            <Link to="/Users" class="item">
-              Users
+            <Link to="/PostList" class="item">
+              PostList
             </Link>
-            <Link to="/Contacts" class="item">
-              Contacts
+            <Link to="/ToDoList" class="item">
+              ToDoList
             </Link>
             <div class="right menu">
               <div class="item">
@@ -52,21 +54,37 @@ class App extends React.Component {
           </div>
 
 
-          <Route path="/" exact>
-            <Home />
-          </Route>
-          <Route path="/About">
-            <About />
-          </Route>
-          <Route path="/Users">
-            <Users />
-          </Route>
-          <Route path="/Contacts">
-            <Contacts />
-          </Route>
-          <Route path="/Logout">
-            <Logout />
-          </Route>
+          {/* <Route path="/" exact
+            component={Home}
+          />
+          <Route path="/About"
+            component={About}
+          />
+          <Route path="/PostList"
+            component={PostList}
+          />
+          <Route path="/ToDoList"
+            component={ToDoList}
+          />
+          <Route path="/Logout"
+            component={Logout}
+          />
+          <Route path="/PostDetail/:id"
+            component={PostDetail}
+         /> */}
+
+          <switch>
+            <Route path={Routes[0].pathname} exact component={Routes[0].component} />
+            <Route path={Routes[1].pathname} exact component={Routes[1].component} />
+            <Route path={Routes[2].pathname} exact component={Routes[2].component} />
+            <Route path={Routes[3].pathname}  component={Routes[3].component} />
+            <Route path={Routes[4].pathname} exact component={Routes[4].component} />
+            <Route path={Routes[5].pathname} exact component={Routes[5].component} />
+            <Route path={Routes[6].pathname}  component={Routes[6].component} />
+
+          </switch>
+          {/* <Redirect to='/not-found' /> */}
+
 
         </div>
       </Router>

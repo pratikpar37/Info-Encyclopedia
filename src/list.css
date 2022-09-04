@@ -1,0 +1,22 @@
+#list{
+    cursor: pointer;
+    position: relative;
+    transition:0.2s;
+    font:18px bold serif;
+    padding-left: 5px;
+
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+}
+/* #list:nth-child(odd)
+{
+    background-color: fuchsia;
+} */
+#list.selected{
+    background-color: darkkhaki;
+    color: firebrick;
+    text-decoration: line-through;
+
+}

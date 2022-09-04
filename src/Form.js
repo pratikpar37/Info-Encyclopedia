@@ -9,7 +9,7 @@ const Form = () => {
    const[phone, setphone]=useState("");
    const onsubmit=(e)=>{
        e.preventDefault();
-       console.log("Name:" ,name);
+       console.log(name);
        console.log("Email:" ,email);
        console.log("Address:" ,address);
        console.log("Age:" ,age);
@@ -19,11 +19,16 @@ const Form = () => {
    };
 
     return (
-        <div>
-            <form className="ui form" method="get">
-                <div className="field">
+        <div style={{textAlign:"center", border:"3px solid blue",boxSizing:"content-box",width:"300px",padding:"15px",marginLeft:"40%",marginTop:"8%"}}>
+            <form className="ui form" style={{display:"inline-block"}}  onSubmit={onsubmit} method="get">
+                <div className="field" >
                     <label> Name</label>
-                    <input type="text" name="name" placeholder=" Name" onChange={e=>setname(e.target.value)} />
+                    <input type="text" name="name" placeholder=" Name" onChange={(e)=>{
+                      
+                       setname(e.target.value);
+                       
+                        
+                    }} />
                     <require/>
                     
                 </div>
@@ -35,6 +40,7 @@ const Form = () => {
                 <div className="field">
                     <label>Address</label>
                     <input type="text" name="Address" placeholder="Address" onChange={e=>setaddress(e.target.value)} />
+                    <required/>
                 </div>
                 <div className="field">
                     <label>Age</label>
@@ -43,7 +49,7 @@ const Form = () => {
                 <div className="field">
                     <label>Phone no.</label>
                     <input type="tel" name="Phone" placeholder="Phone no" onChange={e=>setphone(e.target.value)} />
-                    <require/>
+                    <required/>
                 </div>
                 
                 <div className="field">
@@ -52,7 +58,7 @@ const Form = () => {
                         <label>I agree to the Terms and Conditions</label>
                     </div>
                 </div>
-                <button className="ui button" type="submit" onSubmit={onsubmit}>Submit</button>
+                <button className="ui green button" type="submit">Submit</button>
             </form>
         </div>
     );
